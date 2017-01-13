@@ -68,10 +68,6 @@ function register(thingShadows, thingId) {
 	return new Promise(function(resolve, reject) {
 		//Register interest in the thing with thingId
 		thingShadows.register(thingId, {}, function() {
-			thingShadows.on('delta', function(thingName, stateObject) {
-			    console.log('received delta on', thingName, 'with values:', JSON.stringify(stateObject));
-			});
-
 			resolve(thingShadows);
 		})
 	});
@@ -95,10 +91,15 @@ function update(thingShadows, thingId, json) {
 function subscribe(thingShadows) {
 	return new Promise(function(resolve, reject) {
 		console.log("Setting up handler and subscribing");
-        thingShadows.on('message', function(topic, message) {
-    		console.log("message callback - topic: ", topic, "message:", message.toString())    	
-        });
-        thingShadows.subscribe("custom_topic", function() {resolve(thingShadows)})
+    
+    thingShadows.on('delta', function(thingName, stateObject) {
+      console.log('received delta on', thingName, 'with values:', JSON.stringify(stateObject));
+    });
+
+    thingShadows.on('message', function(topic, message) {
+		  console.log("message callback - topic: ", topic, "message:", message.toString())    	
+    });
+    thingShadows.subscribe("custom_topic", function() {resolve(thingShadows)})
 	})
 }
 
