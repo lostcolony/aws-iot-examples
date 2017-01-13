@@ -6,9 +6,6 @@
 
 
 
-const config = require('config');
-//Loads the AWS_PROFILE specified in config, to attempt to retrieve credentials from default location (i.e., ~/.aws/credentials).
-//Replace with retrieved temporary credentials if using that way.
 
 const AWS = require('aws-sdk');
 const AWSDevices = require('aws-iot-device-sdk');
@@ -18,7 +15,6 @@ function init() {
     return new Promise(function (resolve, reject) {
         try {
         const device = AWSDevices.device({
-            host: config.get("iot_host"),
             region: "us-east-1",
             clientId: "use something meaningful here, uniquely identifying this connection",
             maximumReconnectTimeMs: 8000,

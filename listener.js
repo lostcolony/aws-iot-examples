@@ -34,8 +34,7 @@ function getConfigOpts(credentials) {
       baseReconnectTimeMs: 100,
       keyPath: __dirname + "/certs/private.key",
       certPath: __dirname + "/certs/device.crt",
-      caPath: __dirname + "/certs/ca.pem",
-  	  host: config.get("iot_host")
+      caPath: __dirname + "/certs/ca.pem"
 		}
 	} else {
 		return {
