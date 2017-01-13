@@ -16,7 +16,7 @@ function init() {
         try {
         const device = AWSDevices.device({
             region: "us-east-1",
-            clientId: "use something meaningful here, uniquely identifying this connection",
+            clientId: "use something meaningful here, uniquely identifying this connection - mqtt",
             maximumReconnectTimeMs: 8000,
             debug: false,
             baseReconnectTimeMs: 500,

@@ -14,7 +14,7 @@ function init(credentials) {
     return new Promise(function (resolve, reject) {
         const device = AWSDevices.device({
             region: "us-east-1",
-            clientId: "use something meaningful here, uniquely identifying this connection",
+            clientId: "use something meaningful here, uniquely identifying this connection - ws",
             protocol: 'wss',
             maximumReconnectTimeMs: 8000,
             debug: false,
