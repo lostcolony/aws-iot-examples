@@ -1,4 +1,12 @@
 // Assumptions: 
+// For MQTT
+// You have created a certificate in the AWS IoT console (or uploaded your own), and attached a policy with the necessary permissions
+// (these would be iot:Connect, iot:Publish, and iot:Subscribe) on the appropriate resource(s) (arn:aws:iot:us-east-1:{accountId}:* is what I used; you can limit it further as appropriate)
+// 
+// The certificate, private key, and CA for AWS IoT that you were told to download exist in ./certs/, with the names as specified in the keyPath, certPath, and caPath options below.
+
+
+// For WSS
 // You are using a set of AWS credentials with sufficient permissions (these would be, for thing creation, iot:CreateThing, and for sending/receiving
 // data, iot:Connect, iot:Publish, iot:UpdateThingShadow, iot:GetThingShadow, and iot:Subscribe)
 // to the appropriate resources (arn:aws:iot:us-east-1:{accountId}:* is what I used; you can limit it further as appropriate)
