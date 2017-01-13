@@ -26,8 +26,7 @@ function init() {
             baseReconnectTimeMs: 500,
             keyPath: __dirname + "/certs/private.key",
             certPath: __dirname + "/certs/device.crt",
-            caPath: __dirname + "/certs/ca.pem",
-            rejectUnauthorized: false
+            caPath: __dirname + "/certs/ca.pem"
         })
     }catch(ex) {
         console.log(ex);
